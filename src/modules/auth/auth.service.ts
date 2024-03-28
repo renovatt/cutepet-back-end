@@ -21,11 +21,15 @@ export class AuthService {
 
     const user = await this.usersRepository.findUnique({ where: { email } });
 
-    if (!user) throw new UnauthorizedException();
+    if (!user) {
+      throw new UnauthorizedException();
+    }
 
     const passwordMatcher = await compare(password, user.password);
 
-    if (!passwordMatcher) throw new UnauthorizedException();
+    if (!passwordMatcher) {
+      throw new UnauthorizedException();
+    }
 
     const accessToken = await this.generateAccessToken(user.id);
 
@@ -40,7 +44,9 @@ export class AuthService {
       select: { id: true },
     });
 
-    if (emailTaken) throw new ConflictException('This email already exists');
+    if (emailTaken) {
+      throw new ConflictException('This email already exists');
+    }
 
     const passwordHashed = await hash(password, 12);
 
