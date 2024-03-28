@@ -58,7 +58,7 @@ model Schedule {
   status      Status
   breed       Breed
 
-  user User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("schedules")
 }
