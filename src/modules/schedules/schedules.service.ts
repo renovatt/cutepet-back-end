@@ -7,6 +7,15 @@ import { SchedulesRepositories } from 'src/shared/database/repositories/schedule
 export class SchedulesService {
   constructor(private readonly schedulesRepo: SchedulesRepositories) {}
 
+  async createMany(userId: string, createManyScheduleDto: CreateScheduleDto[]) {
+    return this.schedulesRepo.createMany({
+      data: createManyScheduleDto.map((dto) => ({
+        ...dto,
+        userId,
+      })),
+    });
+  }
+
   async create(userId: string, createScheduleDto: CreateScheduleDto) {
     const {
       pet,

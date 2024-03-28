@@ -8,6 +8,14 @@ import { ActiveUserId } from 'src/shared/decorators/ActiveUserId';
 export class SchedulesController {
   constructor(private readonly schedulesService: SchedulesService) {}
 
+  @Post('create-many')
+  createMany(
+    @ActiveUserId() userId: string,
+    @Body() createManyScheduleDto: CreateScheduleDto[],
+  ) {
+    return this.schedulesService.createMany(userId, createManyScheduleDto);
+  }
+
   @Post()
   create(
     @ActiveUserId() userId: string,
