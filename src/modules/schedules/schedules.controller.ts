@@ -1,8 +1,9 @@
 import { Controller, Get, Post, Body, Param, Put, Patch } from '@nestjs/common';
-import { SchedulesService } from './schedules.service';
+import { SchedulesService } from './services/schedules.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
-import { ActiveUserId } from 'src/shared/decorators/ActiveUserId';
+import { ActiveUserId } from 'src/shared/decorators/active-user-id';
+import { ParseObjectIdPipe } from 'src/shared/pipes/parse-object-id-pipe';
 
 @Controller('schedules')
 export class SchedulesController {
@@ -32,15 +33,15 @@ export class SchedulesController {
   @Get(':scheduleId')
   findOne(
     @ActiveUserId() userId: string,
-    @Param('scheduleId') scheduleId: string,
+    @Param('scheduleId', ParseObjectIdPipe) scheduleId: string,
   ) {
-    return this.schedulesService.findOne(scheduleId);
+    return this.schedulesService.findOne(userId, scheduleId);
   }
 
   @Patch(':scheduleId')
   updateStatus(
     @ActiveUserId() userId: string,
-    @Param('scheduleId') scheduleId: string,
+    @Param('scheduleId', ParseObjectIdPipe) scheduleId: string,
     @Body() updateScheduleDto: UpdateScheduleDto,
   ) {
     return this.schedulesService.updateStatus(
@@ -53,7 +54,7 @@ export class SchedulesController {
   @Put(':scheduleId')
   update(
     @ActiveUserId() userId: string,
-    @Param('scheduleId') scheduleId: string,
+    @Param('scheduleId', ParseObjectIdPipe) scheduleId: string,
     @Body() updateScheduleDto: UpdateScheduleDto,
   ) {
     return this.schedulesService.update(userId, scheduleId, updateScheduleDto);
