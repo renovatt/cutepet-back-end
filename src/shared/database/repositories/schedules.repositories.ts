@@ -14,6 +14,10 @@ export class SchedulesRepositories {
     return this.prismaService.schedule.create(createDto);
   }
 
+  findFirst(findFirstDto: Prisma.ScheduleFindFirstArgs) {
+    return this.prismaService.schedule.findFirst(findFirstDto);
+  }
+
   findAll(findManyDto: Prisma.ScheduleFindManyArgs) {
     return this.prismaService.schedule.findMany(findManyDto);
   }

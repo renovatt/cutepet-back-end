@@ -1,19 +1,27 @@
-import { Injectable } from '@nestjs/common';
-import { CreateScheduleDto } from './dto/create-schedule.dto';
-import { UpdateScheduleDto } from './dto/update-schedule.dto';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { CreateScheduleDto } from '../dto/create-schedule.dto';
+import { UpdateScheduleDto } from '../dto/update-schedule.dto';
 import { SchedulesRepositories } from 'src/shared/database/repositories/schedules.repositories';
+import { ValidateScheduleOwnershipService } from './validate-schedule-ownership.service';
 
 @Injectable()
 export class SchedulesService {
-  constructor(private readonly schedulesRepo: SchedulesRepositories) {}
+  constructor(
+    private readonly schedulesRepo: SchedulesRepositories,
+    private readonly validateScheduleOwnershipService: ValidateScheduleOwnershipService,
+  ) {}
 
   async createMany(userId: string, createManyScheduleDto: CreateScheduleDto[]) {
-    return this.schedulesRepo.createMany({
-      data: createManyScheduleDto.map((dto) => ({
-        ...dto,
-        userId,
-      })),
-    });
+    try {
+      return await this.schedulesRepo.createMany({
+        data: createManyScheduleDto.map((dto) => ({
+          ...dto,
+          userId,
+        })),
+      });
+    } catch (error) {
+      throw new BadRequestException('Missing required fields');
+    }
   }
 
   async create(userId: string, createScheduleDto: CreateScheduleDto) {
@@ -55,7 +63,9 @@ export class SchedulesService {
     });
   }
 
-  async findOne(scheduleId: string) {
+  async findOne(userId: string, scheduleId: string) {
+    await this.validateOwnership(userId, scheduleId);
+
     return this.schedulesRepo.findOne({
       where: { id: scheduleId },
     });
@@ -78,6 +88,8 @@ export class SchedulesService {
       observation,
       breed,
     } = updateScheduleDto;
+
+    await this.validateOwnership(userId, scheduleId);
 
     return this.schedulesRepo.uptade({
       where: { id: scheduleId },
@@ -103,9 +115,15 @@ export class SchedulesService {
   ) {
     const { status } = updateScheduleDto;
 
+    await this.validateOwnership(userId, scheduleId);
+
     return this.schedulesRepo.uptade({
       where: { id: scheduleId },
       data: { status },
     });
+  }
+
+  private async validateOwnership(userId: string, scheduleId: string) {
+    await this.validateScheduleOwnershipService.validate(userId, scheduleId);
   }
 }
