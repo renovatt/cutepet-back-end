@@ -5,9 +5,16 @@ import { AuthModule } from '@modules/auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from '@modules/auth/auth.guard';
 import { SchedulesModule } from '@modules/schedules/schedules.module';
+import { ConnectionModule } from '@modules/connection/connection.module';
 
 @Module({
-  imports: [UsersModule, DatabaseModule, AuthModule, SchedulesModule],
+  imports: [
+    UsersModule,
+    DatabaseModule,
+    AuthModule,
+    SchedulesModule,
+    ConnectionModule,
+  ],
   controllers: [],
   providers: [
     {
