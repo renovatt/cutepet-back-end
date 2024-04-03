@@ -4,7 +4,9 @@ import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { ActiveUserId } from '../../shared/decorators/active-user-id';
 import { ParseObjectIdPipe } from '../../shared/pipes/parse-object-id-pipe';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Schedules')
 @Controller('schedules')
 export class SchedulesController {
   constructor(private readonly schedulesService: SchedulesService) {}
