@@ -17,14 +17,14 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths":{
-      "@modules/*": ["src/modules/*",],
-      "@shared/*": ["src/shared/*",],
-      "@config/*": ["src/shared/config/*"],
-      "@database/*": ["src/shared/database/*"],
-      "@repositories/*": ["src/shared/database/repositories/*"],
-      "@decorators/*": ["src/shared/decorators/*"],
-      "@pipes/*": ["src/shared/pipes/*"],
-    }
+    // "paths":{
+    //   "@modules/*": ["src/modules/*",],
+    //   "@shared/*": ["src/shared/*",],
+    //   "@config/*": ["src/shared/config/*"],
+    //   "@database/*": ["src/shared/database/*"],
+    //   "@repositories/*": ["src/shared/database/repositories/*"],
+    //   "@decorators/*": ["src/shared/decorators/*"],
+    //   "@pipes/*": ["src/shared/pipes/*"],
+    // }
   }
 }

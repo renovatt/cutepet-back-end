@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { SchedulesRepositories } from '@repositories/schedules.repositories';
+import { SchedulesRepositories } from '../../../shared/database/repositories/schedules.repositories';
 
 @Injectable()
 export class ValidateScheduleOwnershipService {

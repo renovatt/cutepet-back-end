@@ -2,8 +2,8 @@ import { Controller, Get, Post, Body, Param, Put, Patch } from '@nestjs/common';
 import { SchedulesService } from './services/schedules.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
-import { ActiveUserId } from '@decorators/active-user-id';
-import { ParseObjectIdPipe } from '@pipes/parse-object-id-pipe';
+import { ActiveUserId } from '../../shared/decorators/active-user-id';
+import { ParseObjectIdPipe } from '../../shared/pipes/parse-object-id-pipe';
 
 @Controller('schedules')
 export class SchedulesController {
