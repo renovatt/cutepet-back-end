@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateScheduleDto } from '../dto/create-schedule.dto';
 import { UpdateScheduleDto } from '../dto/update-schedule.dto';
-import { SchedulesRepositories } from 'src/shared/database/repositories/schedules.repositories';
+import { SchedulesRepositories } from '@repositories/schedules.repositories';
 import { ValidateScheduleOwnershipService } from './validate-schedule-ownership.service';
 
 @Injectable()
