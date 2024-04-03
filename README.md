@@ -1,30 +1,37 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<div align='center'>
+<a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="50" alt="Nest Logo" /></a>
+<h1>CutePet - API</h1> 
+</div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+### Descrição
+Bem-vindo à API desenvolvida para o meu projeto ``CutePet``, um sistema inovador de agendamentos para PetShops, proporcionando facilidade e eficiência na gestão de compromissos para banhos, tosas e consultas.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Principais recursos:
+- Estrutura Robusta: A API é cuidadosamente estruturada, seguindo as melhores práticas do Nest.js para garantir uma base sólida e escalável.
 
-## Description
+- Operações CRUD Completas: Com as operações (Create, Read, Update, PATCH) estão implementadas de forma abrangente nas rotas da API, proporcionando funcionalidades completas para gerenciamento de dados.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- Autenticação Segura com JWT: A autenticação é tratada de maneira segura e eficiente, utilizando JSON Web Tokens (JWT) para garantir a segurança das transações e acessos à API.
+
+
+### Documentação
+Documentação Clara com Swagger: A API vem com uma documentação abrangente, gerada automaticamente pelo Swagger. Isso facilita a compreensão e o uso da API, permitindo uma integração suave para desenvolvedores.
+
+Sinta-se à vontade para explorar a documentação e aproveitar os recursos oferecidos por esta API para impulsionar seus projetos financeiros. Estamos comprometidos em fornecer uma experiência sólida e eficaz para atender às suas necessidades de desenvolvimento.
+
+## 🛠️ Tecnologias
+
+📁 **Back-end**
+- [Nest.js](https://github.com/nestjs/nest) 
+- [Prisma](https://www.prisma.io)
+- [MongoDB](https://www.mongodb.com)
+- [Mongoose](https://mongoosejs.com/docs/guide.html)
+
+🔋 **Versionamento e Deploy**
+- [Git](https://git-scm.com)
+- [Vercel](https://vercel.com/)
+
+<br>
 
 ## Installation
 
@@ -45,29 +52,33 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Clone
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  # clone project
+  $ git clone https://github.com/renovatt/cutepet-back-end.git
 ```
 
-## Support
+## Doc Swagger
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+    # swagger documentation
+    http://localhost:5000/docs
+```
 
-## Stay in touch
+![Doc](./.github/doc-1.png)
+![Doc-1](./.github/doc-2.png)
+![Doc-2](./.github/doc-3.png)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+<br>
 
-## License
+🚀 **Como contribuir?**
 
-Nest is [MIT licensed](LICENSE).
+- Siga-me no GitHub para oferecer suporte.
+- Dê uma estrela ao projeto.
+- Conecte-se comigo no LinkedIn para expandir nossa rede e curta o projeto.
+
+<br>
+
+🧑‍💻 **Criado por**
+[@renovatt](https://www.linkedin.com/in/renovatt/)
